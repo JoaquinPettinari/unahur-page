@@ -1,8 +1,36 @@
-<article class:list={["w-full grid grid-cols-1 lg:grid-cols-2 mt-5"]}>
-  <div class="w-full">
-    <p>Img</p>
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  epigraph: string;
+  img: ImageMetadata;
+  reverse?: boolean;
+  buttonLabel: string;
+  linkButton: string;
+}
+
+const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
+---
+
+<article
+  class="w-full grid grid-cols-1 h-5/6 items-center justify-items-center lg:grid-cols-2 mt-5"
+  id={"#events"}
+>
+  <div class:list={[{ "order-last": reverse }]}>
+    <Image src={img} alt="Image of event" />
   </div>
-  <div class="w-full">
-    <p>texto</p>
+  <div class="w-full lg:w-5/6">
+    <p class="primary-color text-xl font-bold uppercase mb-4">{epigraph}</p>
+    <p class="text-gray-800 text-5xl font-bold">{title}</p>
+    <div class="mt-4 mb-8">
+      <slot name="body" />
+    </div>
+    <a
+      class="primary-color border py-2 px-5 rounded-3xl border-[#4da6e7]"
+      href={linkButton}
+      target="_blank">{buttonLabel}</a
+    >
   </div>
 </article>

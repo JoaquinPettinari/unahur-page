@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 interface Props {
   title: string;
 }
-
+const primaryColor = "#4da6e7";
 const { title } = Astro.props;
 ---
 
@@ -27,7 +27,7 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style is:global>
+<style is:global define:vars={{ primaryColor }}>
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -55,6 +55,6 @@ const { title } = Astro.props;
       monospace;
   }
   .primary-color {
-    color: #4da6e7;
+    color: var(--primaryColor);
   }
 </style>

@@ -1,9 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import EventLayout from "../layouts/EventLayout.astro";
+import EventImage from "../images/desarrolladores.jpg";
 ---
 
 <Layout title="Informática Unahur">
-  <EventLayout />
+  <EventLayout
+    title="UNAHUR@TIC #2"
+    epigraph="Sábado 4 de noviembre"
+    img={EventImage}
+    buttonLabel="Registrate y descarga la agenda"
+    linkButton="https://informaticaunahur.github.io/unahurtic2023/"
+    reverse
+  >
+    <p slot="body" class="body-text">
+      2das Jornadas de actualización tecnológica de Informática. Habrá charlas y
+      espacios de intercambio sobre IA, Desarrollo de Software, Videojuegos ,
+      Mundo laboral.
+    </p>
+  </EventLayout>
+  <EventLayout
+    title="UNAHUR@TIC #2"
+    epigraph="Sábado 4 de noviembre"
+    img={EventImage}
+    buttonLabel="Registrate"
+    linkButton="https://informaticaunahur.github.io/unahurtic2023/"
+  >
+    <p slot="body" class="body-text">
+      2das Jornadas de actualización tecnológica de Informática. Habrá charlas y
+      espacios de intercambio sobre IA, Desarrollo de Software, Videojuegos ,
+      Mundo laboral.
+    </p>
+  </EventLayout>
 </Layout>
+
+<style>
+  .body-text {
+    color: #5b5c5e;
+    font-size: 15px;
+    font-weight: 300;
+  }
+</style>
