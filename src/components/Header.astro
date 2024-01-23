@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import NavButton from "./NavButton.astro";
+import UnahurLogo from "../images/logo-informatica-con-nombre.jpg";
+---
+
+<header class="flex justify-center bg-white w-full sticky top-0 p-4 shadow">
+  <div
+    class="flex justify-between items-center w-full max-w-6xl flex-col lg:flex-row"
+  >
+    <Image
+      src={UnahurLogo}
+      alt="Logo principal de la Universidad Nacional de Hurlingham junto al logo de la carrera de informática"
+    />
+    <nav>
+      <NavButton href="/" label="Inicio" />
+      <NavButton href="#planes" label="Planes" />
+      <NavButton href="/materias" label="Materias" />
+      <NavButton
+        href="https://tourmaline-cocoa-6c3.notion.site/87a29a1aebd3471eb4c477ce5b9d7b11?v=723d2a9e732a4ea58278ac4f11ba9c5e"
+        label="Horarios"
+      />
+      <NavButton href="#creditos" label="Créditos" />
+      <NavButton href="#contacto" label="Contacto" />
+    </nav>
+  </div>
+</header>

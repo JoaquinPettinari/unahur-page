@@ -1,0 +1,22 @@
+---
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+---
+
+<button
+  class="p-2 text-color transition-all ease-in-out delay-300ms mx-3 hover:text-blue-300"
+>
+  <a href={href}>
+    {label}
+  </a>
+</button>
+
+<style>
+  button {
+    color: #2a2a2a;
+  }
+</style>
