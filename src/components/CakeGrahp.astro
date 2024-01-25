@@ -1,0 +1,73 @@
+---
+interface Props {
+  percentage: number;
+  title: string;
+  subtitle: string;
+  color: string;
+}
+
+const { percentage, subtitle, title, color } = Astro.props;
+---
+
+<div class="cake-container">
+  <div
+    class="progress"
+    style={`--clr:${color}; --rotate: calc(90deg - ${percentage * 3.6}deg);`}
+  >
+    <h3>{title}</h3>
+    <h4>{subtitle}</h4>
+  </div>
+</div>
+
+<style>
+  .cake-container {
+    position: relative;
+  }
+
+  .cake-container .progress {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    color: black;
+    background: white linear-gradient(to right, transparent 50%, var(--clr) 0);
+  }
+
+  .cake-container .progress::before {
+    content: "";
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+    background: var(--clr);
+    transform: rotate(var(--rotate));
+  }
+
+  .cake-container .progress::after {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: white;
+  }
+  .cake-container .progress h3 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    text-wrap: nowrap;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .cake-container .progress h4 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #afafaf;
+    z-index: 2;
+  }
+</style>

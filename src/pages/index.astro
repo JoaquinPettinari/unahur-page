@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import EventLayout from "../layouts/EventLayout.astro";
 import EventImage from "../images/desarrolladores.jpg";
+import About from "../images/about-dec-v3.png";
+import CakeGrahp from "../components/CakeGrahp.astro";
 ---
 
 <Layout title="Informática Unahur">
@@ -20,24 +22,52 @@ import EventImage from "../images/desarrolladores.jpg";
     </p>
   </EventLayout>
   <EventLayout
-    title="UNAHUR@TIC #2"
-    epigraph="Sábado 4 de noviembre"
-    img={EventImage}
-    buttonLabel="Registrate"
-    linkButton="https://informaticaunahur.github.io/unahurtic2023/"
+    title="Carga Horaria De Las Tecnicaturas?"
+    epigraph="Pregrado"
+    img={About}
+    buttonLabel="Mas información..."
+    linkButton="/#services"
   >
     <p slot="body" class="body-text">
-      2das Jornadas de actualización tecnológica de Informática. Habrá charlas y
-      espacios de intercambio sobre IA, Desarrollo de Software, Videojuegos ,
-      Mundo laboral.
+      Los nuevos planes de pregrado tienen menor carga horaria. Son más
+      específicos en los <span class="font-bold">alcances del título</span> y requieren
+      una menor dedicación horaria de cursada semanal para que te puedas organizar
+      mejor, sobre todo al inicio de la vida universitaria.
     </p>
+    <div slot="extra-body" class="flex gap-5 mb-10 w-full justify-between">
+      {
+        (
+          //TODO: Mejorar la cuenta del porcentaje, anda re mal}
+          <>
+            <CakeGrahp
+              percentage={0}
+              title="1408 hs"
+              subtitle="-25% total"
+              color="#4da6e7"
+            />
+            <CakeGrahp
+              percentage={10}
+              title="14 hs"
+              subtitle="x semana - 1er cuatri"
+              color="#726ae3"
+            />
+            <CakeGrahp
+              percentage={75}
+              title="35"
+              subtitle="Créditos por actividad"
+              color="#f58b56"
+            />
+          </>
+        )
+      }
+    </div>
   </EventLayout>
-</Layout>
 
-<style>
-  .body-text {
-    color: #5b5c5e;
-    font-size: 15px;
-    font-weight: 300;
-  }
-</style>
+  <style>
+    .body-text {
+      color: #5b5c5e;
+      font-size: 15px;
+      font-weight: 300;
+    }
+  </style>
+</Layout>

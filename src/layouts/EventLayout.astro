@@ -27,6 +27,7 @@ const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
     <div class="mt-4 mb-8">
       <slot name="body" />
     </div>
+    <slot name="extra-body" />
     <a
       class="primary-color border py-2 px-5 rounded-3xl border-[#4da6e7]"
       href={linkButton}
