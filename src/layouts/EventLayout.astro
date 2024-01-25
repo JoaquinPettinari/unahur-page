@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import TitleDivider from "../components/TitleDivider.astro";
 
 interface Props {
   title: string;
@@ -24,12 +25,13 @@ const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
   <div class="w-full lg:w-5/6">
     <p class="primary-color text-xl font-bold uppercase mb-4">{epigraph}</p>
     <p class="text-gray-800 text-5xl font-bold">{title}</p>
+    <TitleDivider />
     <div class="mt-4 mb-8">
       <slot name="body" />
     </div>
     <slot name="extra-body" />
     <a
-      class="primary-color border py-2 px-5 rounded-3xl border-[#4da6e7]"
+      class="primary-color border py-2 px-5 rounded-3xl border-[var(--primaryColor);]"
       href={linkButton}
       target="_blank">{buttonLabel}</a
     >
