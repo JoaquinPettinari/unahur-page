@@ -4,9 +4,7 @@ import NavButton from "./Header/NavButton.astro";
 import UnahurLogo from "../images/logo-informatica-con-nombre.jpg";
 ---
 
-<header
-  class="flex justify-center bg-white w-full sticky top-0 p-4 shadow h-16"
->
+<header class="flex justify-center bg-white w-full fixed top-0 p-4 shadow h-16">
   <div
     class="flex justify-between items-center w-full max-w-6xl flex-col lg:flex-row"
   >
@@ -14,7 +12,7 @@ import UnahurLogo from "../images/logo-informatica-con-nombre.jpg";
       src={UnahurLogo}
       alt="Logo principal de la Universidad Nacional de Hurlingham junto al logo de la carrera de informática"
     />
-    <nav>
+    <nav class="hidden lg:block">
       <NavButton href="/#events" label="Inicio" />
       <NavButton href="#planes" label="Planes" />
       <NavButton href="/materias" label="Materias" />

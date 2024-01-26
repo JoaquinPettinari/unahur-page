@@ -16,17 +16,21 @@ const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
 ---
 
 <article
-  class:list={"w-full grid grid-cols-1 items-center justify-items-center lg:grid-cols-2"}
+  class:list={"w-full grid grid-cols-1 gap-10 items-center justify-items-center lg:grid-cols-2"}
   id={"#events"}
 >
-  <div class:list={[{ "order-last": reverse }]}>
-    <Image src={img} alt="Image of event" />
-  </div>
-  <div class="w-full lg:w-5/6">
+  <div
+    class:list={[
+      "w-full flex flex-col items-center lg:w-5/6 lg:items-start",
+      { "order-last": reverse },
+    ]}
+  >
     <p class="primary-color text-xl font-bold uppercase mb-4">{epigraph}</p>
-    <p class="text-gray-800 text-5xl font-bold">{title}</p>
-    <TitleDivider />
-    <div class="mt-4 mb-8">
+    <p class="text-gray-800 text-4xl lg:text-5xl font-bold">{title}</p>
+    <div class="m-auto lg:m-0">
+      <TitleDivider />
+    </div>
+    <div class="mt-4 mb-8 w-3/4 text-center lg:text-start">
       <slot name="body" />
     </div>
     <slot name="extra-body" />
@@ -35,5 +39,8 @@ const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
       href={linkButton}
       target="_blank">{buttonLabel}</a
     >
+  </div>
+  <div class="hidden lg:block">
+    <Image src={img} alt="Image of event" />
   </div>
 </article>

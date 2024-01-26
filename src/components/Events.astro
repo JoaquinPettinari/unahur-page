@@ -5,14 +5,13 @@ import About from "../images/about-dec-v3.png";
 import CakeGrahp from "./Events/CakeGrahp.astro";
 ---
 
-<div class="event-height flex flex-col justify-around">
+<div class="min-h-screen pt-16 gap-10 flex justify-around event-heigh flex-col">
   <EventLayout
     title="UNAHUR@TIC #2"
     epigraph="Sábado 4 de noviembre"
     img={EventImage}
     buttonLabel="Registrate y descarga la agenda"
     linkButton="https://informaticaunahur.github.io/unahurtic2023/"
-    reverse
   >
     <p slot="body" class="body-text">
       2das Jornadas de actualización tecnológica de Informática. Habrá charlas y
@@ -26,6 +25,7 @@ import CakeGrahp from "./Events/CakeGrahp.astro";
     img={About}
     buttonLabel="Mas información..."
     linkButton="/#services"
+    reverse
   >
     <p slot="body" class="body-text">
       Los nuevos planes de pregrado tienen menor carga horaria. Son más
@@ -33,7 +33,10 @@ import CakeGrahp from "./Events/CakeGrahp.astro";
       una menor dedicación horaria de cursada semanal para que te puedas organizar
       mejor, sobre todo al inicio de la vida universitaria.
     </p>
-    <div slot="extra-body" class="flex gap-5 mb-10 w-full justify-between">
+    <div
+      slot="extra-body"
+      class="flex gap-5 mb-10 w-full flex-wrap justify-center lg:flex-nowrap lg:justify-between"
+    >
       {
         (
           //TODO: Mejorar la cuenta del porcentaje, anda re mal}
@@ -68,8 +71,5 @@ import CakeGrahp from "./Events/CakeGrahp.astro";
     color: #5b5c5e;
     font-size: 16px;
     font-weight: 400;
-  }
-  .event-height {
-    height: calc(100vh - 64px);
   }
 </style>
