@@ -5,8 +5,8 @@ export default function CareerList() {
   const [activeCardId, setActiveCardId] = useState(CAREER_LIST[0].id);
 
   const activeCard = useMemo(() => {
-    return CAREER_LIST?.find((career) => career.id === activeCardId)
-  }, [activeCardId])
+    return CAREER_LIST?.find((career) => career.id === activeCardId);
+  }, [activeCardId]);
 
   return (
     <div class="flex justify-center flex-wrap gap-6">
@@ -25,12 +25,27 @@ export default function CareerList() {
           </div>
         );
       })}
-      <div class="rounded-2xl shadow-xl w-full" >
+      <div class="rounded-2xl shadow-xl w-full py-10 px-10 flex-wrap text-start flex lg:py-20 lg:px-32">
         <div class="w-4/4 lg:w-2/4">
-          <p class="primary-color text-xl font-bold">{activeCard.name}</p>
+          <p class="primary-color text-xl font-bold mb-5">{activeCard.name}</p>
+          <p class="font-normal text-base grey-color">
+            {activeCard.primaryInformation}
+          </p>
+          <div class="my-2">
+            <ul class="flex w-full flex-wrap">
+              {activeCard.checks.map((check, index) => (
+                <li class="w-2/4 py-2" key={index}>
+                  ✔️ {check}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p class="font-normal text-base grey-color">
+            {activeCard.secondaryInformation}
+          </p>
         </div>
-        <div class="w-4/4 lg:w-2/4">
-
+        <div class="w-4/4 lg:w-2/4 flex items-center p-12">
+          <img src={activeCard.image.src} alt="Career describe with image" />
         </div>
       </div>
     </div>
