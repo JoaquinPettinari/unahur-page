@@ -16,7 +16,7 @@ const { img, epigraph, title, buttonLabel, linkButton, reverse } = Astro.props;
 ---
 
 <article
-  class="w-full grid grid-cols-1 h-5/6 items-center justify-items-center lg:grid-cols-2 mt-5"
+  class:list={"w-full grid grid-cols-1 items-center justify-items-center lg:grid-cols-2"}
   id={"#events"}
 >
   <div class:list={[{ "order-last": reverse }]}>
