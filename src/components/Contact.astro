@@ -1,0 +1,59 @@
+---
+import SectionTitle from "./SectionTitle/SectionTitle.astro";
+import DiscordIcon from "../assets/discord-icon.png";
+import TelegramIcon from "../assets/telegram-icon.jpg";
+import YoutubeIcon from "../assets/youtube-icon.png";
+import EmailIcon from "../assets/email-icon.png";
+import { Image } from "astro:assets";
+
+const SOCIAL_MEDIA = [
+  {
+    icon: DiscordIcon,
+    label: "Canal de Discord",
+    link: "https://discord.gg/tqyHtPt",
+  },
+  {
+    icon: TelegramIcon,
+    label: "Canal de Telegram",
+    link: "https://t.me/joinchat/AAAAAFaVfVC8RaEkQhQdhg",
+  },
+  { icon: EmailIcon, label: "informatica-ayuda@unahur.edu.ar", link: "" },
+  {
+    icon: YoutubeIcon,
+    label: "Canal de Youtube",
+    link: "https://www.youtube.com/channel/UCNkrQDISXSSVs-fnQ9MnqEg",
+  },
+];
+---
+
+<SectionTitle
+  epigraph="Contactos"
+  title="La Comunidad De Informática"
+  blueTitle="Se comunica por"
+  id="/#contactos"
+>
+  <div
+    class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+  >
+    {
+      SOCIAL_MEDIA.map(({ label, icon, link }) => (
+        <a class="card" href={link} target="_blank">
+          <Image src={icon} alt={`Icon of ${label}`} />
+          <p class="text-base font-medium mt-5">{label}</p>
+        </a>
+      ))
+    }
+  </div>
+</SectionTitle>
+
+<style>
+  .card {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 23px;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
