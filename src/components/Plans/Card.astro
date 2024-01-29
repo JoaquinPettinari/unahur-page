@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+}
+
+const { title, image } = Astro.props;
+---
+
+<div class="swiper-slide shadow-md rounded-3xl">
+  <Image src={image} alt=`Imagen del plan de: ${title}` class="rounded-t-3xl" />
+  {title}
+</div>
