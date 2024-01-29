@@ -4,6 +4,7 @@ interface Props {
   title: string;
 }
 const primaryColor = "#4da6e7";
+const secondaryColor = "#afafaf";
 const greyColor = "#5b5c5e";
 const { title } = Astro.props;
 ---
@@ -29,7 +30,7 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style is:global define:vars={{ primaryColor, greyColor }}>
+<style is:global define:vars={{ primaryColor, greyColor, secondaryColor }}>
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -61,5 +62,8 @@ const { title } = Astro.props;
   }
   .grey-color {
     color: var(--greyColor);
+  }
+  .secondary-color {
+    color: var(--secondaryColor);
   }
 </style>

@@ -31,7 +31,7 @@ export const PLANS = [
   {
     title: "Tecnicatura Universitaria en Programación de Videojuegos",
     description:
-      "Si te gusta la programación y los videojuegos, podés integrarte a este mundo abordando las problemáticas del diseño y desarrollo.",
+      "Si te gustan los videojuegos, podés integrarte abordando las problemáticas del diseño y desarrollo.",
     image: VideoJuegos,
   },
   {

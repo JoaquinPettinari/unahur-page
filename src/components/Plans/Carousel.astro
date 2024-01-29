@@ -18,13 +18,36 @@ import Card from "./Card.astro";
   src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script is:inline>
   new Swiper(".swiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     loop: true,
     grabCursor: true,
     spaceBetween: 30,
     autoplay: {
-      delay: 2500,
+      delay: 4500,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+      1550: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+      },
+      2000: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+      2700: {
+        slidesPerView: 6,
+        spaceBetween: 50,
+      },
     },
   });
 </script>

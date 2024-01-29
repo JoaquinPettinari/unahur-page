@@ -7,10 +7,21 @@ interface Props {
   image: ImageMetadata;
 }
 
-const { title, image } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
-<div class="swiper-slide shadow-md rounded-3xl">
-  <Image src={image} alt=`Imagen del plan de: ${title}` class="rounded-t-3xl" />
-  {title}
+<div class="swiper-slide shadow-md rounded-3xl min-h-full">
+  <Image
+    src={image}
+    alt=`Imagen del plan de: ${title}`
+    class="rounded-t-3xl w-full h-96"
+  />
+  <div class="p-5">
+    <h4 class="text-xl font-bold">
+      {title}
+    </h4>
+    <h5 class="secondary-color">
+      {description}
+    </h5>
+  </div>
 </div>
