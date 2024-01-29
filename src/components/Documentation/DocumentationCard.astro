@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ImageMetadata;
+  chipLabel: string;
+  date: string;
+  title: string;
+  description: string;
+  vertical?: boolean;
+}
+
+const { image, title, description, chipLabel, date, vertical } = Astro.props;
+---
+
+<div class:list={["card w-full text-start", { flex: vertical }]}>
+  <Image
+    src={image}
+    alt=`Card of documentation of ${title}`
+    class:list={[
+      { "h-full rounded-l-3xl": vertical },
+      { "rounded-3xl": !vertical },
+    ]}
+  />
+  <div class="flex flex-col p-5">
+    <div class="flex justify-between items-center w-full">
+      <p class="rounded-2xl text-white bg-blue-400 px-3 py-2 text-sm">
+        {chipLabel}
+      </p>
+      <p class="secondary-color">
+        {date}
+      </p>
+    </div>
+    <div class="mt-5">
+      <h4 class="text-xl font-bold">
+        {title}
+      </h4>
+      <h5 class="secondary-color mt-4">
+        {description}
+      </h5>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+  }
+</style>

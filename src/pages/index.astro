@@ -3,6 +3,7 @@ import Events from "../components/Events.astro";
 import Layout from "../layouts/Layout.astro";
 import Careers from "../components/Careers.astro";
 import Plans from "../components/Plans.astro";
+import Documentation from "../components/Documentation.astro";
 ---
 
 <Layout title="Informática Unahur">
@@ -12,5 +13,8 @@ import Plans from "../components/Plans.astro";
   </div>
   <div slot="rest">
     <Plans />
+    <div class="max-w-6xl w-full pb-80 p-6 m-auto lg:p-0">
+      <Documentation />
+    </div>
   </div>
 </Layout>

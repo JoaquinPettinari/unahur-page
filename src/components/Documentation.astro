@@ -1,0 +1,41 @@
+---
+import DocumentationCard from "./Documentation/DocumentationCard.astro";
+import SectionTitle from "./SectionTitle/SectionTitle.astro";
+import HowTechnicalsAre from "../assets/como-son-tecnicaturas.jpg";
+import BlogPost from "../assets/blog-post-02.jpg";
+import SubjecstFirstQuarter from "../assets/materias-primer-cuatrimestre.jpg";
+---
+
+<SectionTitle
+  epigraph="DETALLES DE LAS PROPUESTAS"
+  blueTitle="Documentación"
+  title="Revisá La"
+>
+  <div class="grid gap-8 grid-cols-2 grid-rows-2">
+    <div class="row-span-2">
+      <DocumentationCard
+        title="¿Querés pasarte de la Tecnicatura Univ. en Informática a alguna de las nuevas Tecniaturas 2022/2023?"
+        chipLabel="Cambio de PLAN"
+        date="2022 - 2023"
+        description="En este corto video te resumimos los alcances de los títulos y cómo podés hacer para inscribirte en alguno de ellos."
+        image={HowTechnicalsAre}
+      />
+    </div>
+    <DocumentationCard
+      title="Sistema de créditos"
+      chipLabel="Reglamento"
+      date="Junio 2022"
+      description="Revisá el reglamento y las posibilidades de sumar los 35 créditos complementarios del plan de estudios."
+      image={BlogPost}
+      vertical
+    />
+    <DocumentationCard
+      title="Materias del primer cuatrimestre"
+      chipLabel="Materias"
+      date="Febrero 2022"
+      description="Te contamos en este apartado cómo se organizan ahora las materias del primer cuatrimestre. Y si ya las cursaste y aprobaste, cómo impactan en los nuevos planes."
+      image={SubjecstFirstQuarter}
+      vertical
+    />
+  </div>
+</SectionTitle>
