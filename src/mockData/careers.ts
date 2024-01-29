@@ -1,11 +1,11 @@
-import VideoGames from "../images/videojuegos-icono.png";
-import InformaticDegree from "../images/Informatica-licenciatura-icono.png";
-import IAIcon from "../images/Inteligencia-artificial-icono.png";
-import NetworkIcon from "../images/redes-icono.png";
-import ProgIcon from "../images/programacion-icono.png";
-import Service1 from "../images/services-image.jpg";
-import Service2 from "../images/services-image-02.jpg";
-import Service3 from "../images/services-image-03.jpg";
+import VideoGames from "../assets/videojuegos-icono.png";
+import InformaticDegree from "../assets/Informatica-licenciatura-icono.png";
+import IAIcon from "../assets/Inteligencia-artificial-icono.png";
+import NetworkIcon from "../assets/redes-icono.png";
+import ProgIcon from "../assets/programacion-icono.png";
+import Service1 from "../assets/services-image.jpg";
+import Service2 from "../assets/services-image-02.jpg";
+import Service3 from "../assets/services-image-03.jpg";
 
 export const CAREER_LIST = [
   {
