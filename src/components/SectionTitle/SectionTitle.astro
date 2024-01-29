@@ -4,12 +4,13 @@ interface Props {
   epigraph: string;
   title: string;
   blueTitle: string;
+  id?: string;
 }
 
-const { blueTitle, epigraph, title } = Astro.props;
+const { blueTitle, epigraph, title, id } = Astro.props;
 ---
 
-<header class="flex justify-center text-center flex-col mb-40 mt-14">
+<header class="flex justify-center text-center flex-col mb-40 mt-14" id={id}>
   <h3 class="primary-color uppercase text-sm font-bold mb-2">
     {epigraph}
   </h3>
