@@ -5,7 +5,14 @@ import { SUBJECTS } from "../mockData/subjects";
 
 <Layout title="Materias unahur">
   <div slot="rest">
-    <div class="seeker w-full h-80">seeker</div>
+    <div
+      class="seeker w-full h-80 flex justify-center content-center items-center"
+    >
+      <input
+        class="max-w-4xl w-full h-14 opacity-50"
+        placeholder="Buscar materia..."
+      />
+    </div>
     {SUBJECTS.map((subject) => <p>{subject.title}</p>)}
   </div>
 </Layout>
@@ -15,5 +22,6 @@ import { SUBJECTS } from "../mockData/subjects";
     min-height: 200px;
     background: url(../assets/pattern2.svg), rgba(77, 182, 173, 0.9);
     background-size: 310px;
+    padding-top: 64px;
   }
 </style>
