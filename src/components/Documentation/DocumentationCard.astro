@@ -19,7 +19,7 @@ const { image, title, description, chipLabel, date, vertical, href } =
   <a
     class:list={[
       "flex text-start cursor-pointer",
-      { "flex-row": vertical },
+      { "flex-col sm:flex-row": vertical },
       { "flex-col": !vertical },
     ]}
     href={href}
@@ -28,7 +28,10 @@ const { image, title, description, chipLabel, date, vertical, href } =
       src={image}
       alt=`Card of documentation of ${title}`
       class:list={[
-        { "h-full rounded-l-3xl": vertical },
+        {
+          "w-full h-60 rounded-t-3xl sm:w-2/5 sm:h-full sm:rounded-l-3xl":
+            vertical,
+        },
         { "rounded-3xl": !vertical },
       ]}
     />

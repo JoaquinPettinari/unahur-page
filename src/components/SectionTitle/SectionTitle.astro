@@ -3,21 +3,18 @@ import TitleDivider from "./TitleDivider.astro";
 interface Props {
   epigraph: string;
   title: string;
-  blueTitle: string;
   id?: string;
 }
 
-const { blueTitle, epigraph, title, id } = Astro.props;
+const { epigraph, title, id } = Astro.props;
 ---
 
 <section class="flex justify-center text-center flex-col mb-40 mt-14" id={id}>
-  <h3 class="primary-color uppercase text-sm font-bold mb-2">
+  <h3 class="uppercase text-sm font-bold mb-2">
     {epigraph}
   </h3>
-  <h1 class="text-4xl font-bold">
+  <h1 class="primary-color text-4xl font-bold">
     {title}
-    <br />
-    <span class="primary-color">{blueTitle}</span>
   </h1>
   <div class="text-center m-auto mb-11">
     <TitleDivider />

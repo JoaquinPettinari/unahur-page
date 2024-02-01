@@ -11,20 +11,18 @@ interface Props {
 const { title, description, image, href } = Astro.props;
 ---
 
-<div class="swiper-slide shadow-md rounded-3xl min-h-full" onclick="">
-  <a href={href} target="_blank">
+<div class="swiper-slide shadow-md rounded-3xl h-full">
+  <a href={href} target="_blank" class="h-full block">
     <Image
       src={image}
-      alt=`Imagen del plan de: ${title}`
+      alt={`Imagen del plan de: ${title}`}
       class="rounded-t-3xl w-full h-96"
     />
-    <div class="p-5">
-      <h4 class="text-xl font-bold">
-        {title}
-      </h4>
-      <h5 class="secondary-color">
-        {description}
-      </h5>
+    <div
+      class="flex flex-col justify-between p-5 min-h-52 lg:min-h-48 xl:min-h-44 2xl:min-h-40"
+    >
+      <h4 class="text-xl font-bold">{title}</h4>
+      <h5 class="secondary-color">{description}</h5>
     </div>
   </a>
 </div>
