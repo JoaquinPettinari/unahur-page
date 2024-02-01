@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SUBJECTS } from "../mockData/subjects";
+---
+
+<Layout title="Materias unahur">
+  <div slot="rest">
+    <div class="seeker w-full h-80">seeker</div>
+    {SUBJECTS.map((subject) => <p>{subject.title}</p>)}
+  </div>
+</Layout>
+
+<style>
+  .seeker {
+    min-height: 200px;
+    background: url(../assets/pattern2.svg), rgba(77, 182, 173, 0.9);
+    background-size: 310px;
+  }
+</style>
