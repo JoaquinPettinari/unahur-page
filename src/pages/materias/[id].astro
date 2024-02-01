@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { SUBJECTS } from "../../mockData/subjects";
+
+export const getStaticPaths = () => {
+  return SUBJECTS.map((subject) => ({
+    params: { id: subject.url },
+  }));
+};
+const { id } = Astro.params;
+---
+
+<Layout title={`Materia ${id}`}>
+  <div slot="rest">
+    {id}
+  </div>
+</Layout>
